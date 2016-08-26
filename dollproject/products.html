@@ -1,0 +1,259 @@
+  <!DOCTYPE html>
+  <html>
+
+  <head>
+    <title>RaggyMax Dolls</title>
+    <meta charset="utf-8">
+  
+    <!--set the viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Bootstrap css cdns-->
+    <link rel="stylesheet" href="plugins/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+
+    <!--jQuery cdn-->
+    <script src="plugins/jquery-2.2.1.min.js"></script>
+
+    <!--now bootstrap-->
+    <script src="plugins/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    
+    <!--cookies-->
+    <script src="plugins/js-cookie-master/src/js.cookie.js"></script>
+
+    <!--my script file-->
+    <script src="js/raggymax.js"></script>
+   
+   
+
+    <!--Google fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Dancing+Script:700' rel='stylesheet' type='text/css'>
+
+    <!--link to our style sheet-->
+    <link rel="stylesheet" href="css/raggymax.css" type="text/css">
+    
+    <script type="text/javascript">
+
+    </script>
+
+
+   
+
+  </head>
+
+  <body onload="checkCookieOnProducts()">
+  
+
+  <div class="container-fluid">
+    <!--first row-->
+    <div class="row">
+
+      <div class="col-md-12">
+      <img class="rtop" alt="Ragdoll image" src="img/dollface.jpg" height="90px" width="100%" />
+      </div><!--end of col 1-->
+    </div><!--end of row 1-->
+
+    <!--second row full 12 width-->
+   <div class="row">
+
+    <div class="col-md-12">
+    <nav class="navbar navbar-default navbar-inverse" role="navigation">
+      <div class="navbar-header">
+
+          <!--the text and button isn't displayed unless bootstrap not running-->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+             <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+
+          <!--Brand marker in top left-->
+          <p class="navbar-brand">RaggyMax Dolls</p>
+          <!--navbar extra-->
+          <a class="navbar-brand bsktLink navbar-right" href="myBasket.html"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+        
+      </div>
+        
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            
+            <li><a href="specials.html">Our Special Order Dolls</a></li>
+            <li><a href="map.html">Where to find us</a></li>
+            
+
+          </ul><!--end of left nav bar-->
+
+          
+
+          <!--search bar - would like to get this working?-->
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" />
+            </div> 
+            <button type="submit" class="btn btn-default" onclick="searchBtnAction()">
+              Search
+            </button>
+          </form>
+
+          <!--STUFF TO THE RIGHT OF THE NAVBAR-->
+          <ul class="nav navbar-nav navbar-right">
+  
+            <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Log In or Register<strong class="caret"></strong></a>
+              <ul class="dropdown-menu">
+                <li><a href="login.html">Log In</a></li>
+                <li><a href="register.html">Register</a></li>
+
+
+              </ul>
+            </li>
+
+          </ul><!--end of right nav-->
+
+          
+      </div>
+        
+      </nav>
+    </div><!--end of column-->
+  </div><!--end of row 2-->
+
+    <!--Testing out a bit of jquery/ajax here-->
+  <div class="row">
+  <div class="col-md-12" id="deal">
+    <div class="jumbotron" style="margin-left: 25px;margin-right: 25px; margin-top: 10px; text-align: center; opacity: 0.6;">
+      <div class="col-md-12">
+      <button id="driver" class="btn btn-primary btn-md">Click here for today's special offers</button>
+      </div>
+    </div>
+    
+
+  </div>
+  </div>
+
+<div class="row">
+    <div class="col-md-12">
+      <div class="tabbable" id="tabs-421478">
+        <ul class="nav nav-tabs">
+          <li class="active panel-default">
+            <a class="panel-heading" href="#panel-837341" data-toggle="tab">Dipsy Doodle</a>
+          </li>
+          <li class="panel-default">
+            <a class="panel-heading" href="#panel-894336" data-toggle="tab">Peggy Mugglewump</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="panel-837341">
+           <div class="col-md-12">
+              <div class="jumbotron">
+                <div class="col-md-4">
+                <img id="jtronimg" alt="Dipsy Doodle Ragdoll image" src="img/dipsydoodle.jpg"  />
+                </div>
+                <div class="col-md-8">
+                
+                <h2>
+                  Dipsy Doodle
+                </h2>
+                <p class="justpara">
+                  Dipsy Doodle is Suspendisse eget ligula ac est dignissim dapibus. In sed pellentesque diam. Pellentesque sed est id enim scelerisque finibus. Phasellus in ornare nisi. Aliquam a velit sit amet augue imperdiet congue in ac tortor. Quisque suscipit aliquet congue. Nunc eleifend sapien nisl, nec pulvinar risus dignissim et. Nam interdum et mi ut eleifend. Duis est magna, egestas id orci quis, imperdiet bibendum mi. Sed eros libero, maximus quis nulla eget, condimentum fermentum nisi. Proin cursus at turpis sed facilisis. Nulla facilisi.
+
+                          </p>
+                  <br><br>
+                  
+
+        
+                  <div class="quantityBtns">
+                  <ul>
+                  <!--hidden button-->
+                  <li><input class="btn btn-primary btn-md"type="submit" id="minusBtnDipsy" value=" - " onclick="removeItemsDipsy();" style="visibility: hidden;"></li>
+
+                  <!--visible add button, hides after first click -->
+                  
+                  <li><input type="submit" id="addBtnDipsy" class="btn btn-info btn-md" value="Add Dipsy to your Basket" onclick="buyFirstItemDipsy();"></li>
+                  
+
+                  <li><div id="totalInTrolleyDipsy" style="visibility: hidden;"></div></li>
+
+                  <li><input class="btn btn-primary btn-md" type="submit" id="plusBtnDipsy" value=" + " onclick="buyMoreItemsDipsy();" style="visibility: hidden;"></li>
+
+                  <li><input class="btn btn-danger btn-md" type="submit" id="removeBtnDipsy" value="Remove" onclick="noItemsDipsy();" style="visibility: hidden;"></li>
+
+
+                  </ul>
+                  <br><br>
+
+                
+
+                  </div><!--end buttons -->
+
+         
+        </div><!--end of second inner columns-->
+        <!--button at the bottom below the columns-->
+          <a href="myBasket.html" class="btn btn-info btn-md basketBtn">
+          <span class="glyphicon glyphicon-shopping-cart"></span>&nbsp View Basket
+        </a>
+      </div><!--end jumbotron-->
+    </div><!--end colmd12-->
+</div><!--end tab-pane-->
+          <div class="tab-pane" id="panel-894336">
+          <div class="col-md-12">
+              <div class="jumbotron">
+                <div class="col-md-4">
+                <img id="jtronimg" alt="Peggy Mugglewump Ragdoll image" src="img/peggymugglewump.jpg"  />
+                </div>
+                <div class="col-md-8">
+                
+                <h2>
+                 Peggy Mugglewump
+                </h2>
+                <p class="justpara">
+                  Peggy Mugglewump is Suspendisse eget ligula ac est dignissim dapibus. In sed pellentesque diam. Pellentesque sed est id enim scelerisque finibus. Phasellus in ornare nisi. Aliquam a velit sit amet augue imperdiet congue in ac tortor. Quisque suscipit aliquet congue. Nunc eleifend sapien nisl, nec pulvinar risus dignissim et. Nam interdum et mi ut eleifend. Duis est magna, egestas id orci quis, imperdiet bibendum mi. Sed eros libero, maximus quis nulla eget, condimentum fermentum nisi. Proin cursus at turpis sed facilisis. Nulla facilisi.
+
+                          </p>
+                  <br><br>
+                  
+
+        
+                  <div class="quantityBtns">
+                  <ul>
+                  <!--hidden button-->
+                  <li><input class="btn btn-primary btn-md" type="submit" id="minusBtnPeggy" value=" - " onclick="removeItemsPeggy();" style="visibility: hidden;"></li>
+
+                  <!--visible add button, hides after first click -->
+                  
+                  <li><input type="submit" id="addBtnPeggy" class="btn btn-info btn-md" value="Add Peggy to your Basket" onclick="buyFirstItemPeggy();"></li>
+                  
+
+                  <li><div id="totalInTrolleyPeggy" style="visibility: hidden;"></div></li>
+
+                  <li><input class="btn btn-primary btn-md" type="submit" id="plusBtnPeggy" value=" + " onclick="buyMoreItemsPeggy();" style="visibility: hidden;"></li>
+
+                  <li><input class="btn btn-danger btn-md" type="submit" id="removeBtnPeggy" value="Remove" onclick="noItemsPeggy();" style="visibility: hidden;"></li>
+
+
+                  </ul>
+                  <br><br>
+
+                
+
+                  </div>
+
+         
+                </div><!--end of second inner columns-->
+                <a href="myBasket.html" class="btn btn-info btn-md basketBtn">
+                <span class="glyphicon glyphicon-shopping-cart"></span>&nbsp View Basket
+                </a>  
+                </div><!--end ?-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!--end tabbable-->
+    </div><!--end colmd12-->
+  </div><!--end row-->
+
+
+
+
+  
+  </div><!--end of container-->
+
+
+  </body>
+  </html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>RaggyMax Dolls</title>
+    <meta charset="utf-8">
+  
+    <!--set the viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Bootstrap css cdns-->
+    <link rel="stylesheet" href="plugins/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+
+    <!--jQuery cdn-->
+    <script src="plugins/jquery-2.2.1.min.js"></script>
+
+    <!--now bootstrap-->
+    <script src="plugins/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    
+    <!--cookies-->
+    <script src="plugins/js-cookie-master/src/js.cookie.js"></script>
+
+    <!--my script file-->
+    <script src="js/raggymax.js"></script>
+   
+
+    <!--Google fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Dancing+Script:700' rel='stylesheet' type='text/css'>
+
+    <!--link to our style sheet-->
+    <link rel="stylesheet" href="css/raggymax.css" type="text/css">
+   
+
+  </head><!--end of the head-->
+
+<!--call the view cart method on loading the body-->
+<body onload="callOnLoad()">
+
+
+
+<!--bootstrap container-->
+  <div class="container-fluid">
+
+
+    <!-- first row with 2 columns 4 and 8 slots wide-->
+    <div class="row">
+
+      <!--<div class="col-md-4 ltop">
+        <h1 class="ltop"><a href="#"></a>RaggyMax Dolls</h1>
+      </div>-->
+
+      <div class="col-md-12">
+      <img class="rtop" alt="Ragdoll image" src="img/dollface.jpg" height="90px" width="100%" />
+      </div><!--end of col 1-->
+    
+
+      
+
+    </div><!--end of row 1-->
+<!--second row full 12 width for our navbar-->
+  <div class="row">
+
+  <div class="col-md-12">
+    <nav class="navbar navbar-default navbar-inverse" role="navigation">
+      <div class="navbar-header">
+
+          <!--the text and button isn't displayed unless bootstrap not running-->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+             <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+
+          <!--Brand marker in top left-->
+          <a class="navbar-brand" href="products.html">Home</a>
+          <!--navbar extra-->
+          <a class="navbar-brand bsktLink navbar-right" href="myBasket.html"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+          
+          
+      </div>
+        
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            
+            <li><a href="specials.html">Our Special Order Dolls</a></li>
+            <li><a href="map.html">Where to find us</a></li>
+            
+
+          </ul><!--end of left nav bar-->
+
+          
+
+          <!--search bar - would like to get this actually working?-->
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" />
+            </div> 
+            <button type="submit" class="btn btn-default" onclick="searchBtnAction()">
+              Search
+            </button>
+          </form>
+
+          <!--STUFF TO THE RIGHT OF THE NAVBAR-->
+          <ul class="nav navbar-nav navbar-right">
+  
+            <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Log In or Register<strong class="caret"></strong></a>
+              <ul class="dropdown-menu">
+                <li><a href="login.html">Log In</a></li>
+                <li><a href="register.html">Register</a></li>
+              </ul>
+            </li>
+
+          </ul><!--end of right nav-->
+      </div>
+        
+      </nav>
+    </div><!--end of column-->
+  </div><!--end of row 2-->
+
+<h1>Your Shopping Basket</h1>
+<!--Link back to the main shop page-->
+
+
+<!--an extra row for checkout panel instead of a panel to the side-->
+<div class="row">
+  <div class="col-md-12">
+
+    
+     <div class="checkoutPanel">
+     <a href="products.html"><button id="continueBtn" class="btn btn-info btn-md">Continue Shopping</button></a>
+      <ul>
+      <li><a href="#"><button class="btn btn-primary btn-md" onclick="checkout()">Check Out</button></a></li>
+      
+      <div id="totals">
+      <li><div id="output"></div></li>
+      <li><div id="totaldiv"></div></li>
+      </div>
+      <!--clear button-->
+      <li><button class="btn btn-info btn-md" id="emptyBtn" onclick="clearAndCheck()">Empty Basket</button></li>
+      </ul>
+
+      </div>
+  </div>
+</div>
+
+
+<!--Display div for the empty basket - see js file for methods -->
+<div id="emptyBasket" style="display: none;">
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Your basket is currently empty</h4>
+      <p>Give it a job to do, go have a look at some of our fabulous dolls....</p>
+    </div><!--end colmd12-->
+  </div><!--end row-->
+</div><!--end emptyBasket div-->
+
+
+<!--Display div for first product Dipsy-->
+<div id="dipsyBasket" style="display: none;">
+	<div class="row">
+		<div class="col-md-12">
+
+
+			<div class="col-md-3">
+			   <img class="thumbImage" alt="Ragdoll image" src="img/dipsydoodle.jpg" height="120px" width="100%" />
+			</div>
+
+			<div class="col-md-3">
+      <h4>Dipsy Doodle</h4>
+      <p>Information about Dipsy.....this could go on for a while as she's awesome.....there's an amazing amount of stuff to talk about.</p></div>
+			<div class="col-md-3" style="width:auto;">£39.99</div>
+			<div class="col-md-3 quantityBtns" style="width: auto;">
+			
+        <ul>
+        <!--hidden minus button-->
+        <li><input class="btn btn-primary btn-md" type="submit" id="minusBtnDipsy" value=" - " onclick="removeItemsDipsy();" style="visibility: hidden;"></li>
+
+        <!--hidden add on this page button, hides after first click -->
+        <li><input class="btn btn-primary btn-md" type="submit" id="addBtnDipsy" value="Add to Cart" style="text-align: center; display: none;"onclick="buyFirstItemDipsy();"></li>
+
+        <!--hidden amount fed from the cookie-->
+        <li><div id="totalInTrolleyDipsy" style="visibility: hidden;"></div></li>
+
+        <!--hidden plus button-->
+        <li><input class="btn btn-primary btn-md" type="submit" id="plusBtnDipsy" value=" + " onclick="buyMoreItemsDipsy();" style="visibility: hidden;"></li>
+
+        <!--remove button-->
+        <li><input class="btn btn-danger btn-md" type="submit" id="removeBtnDipsy" value="Remove" onclick="noItemsDipsy();" style="visibility: hidden;"></li>
+
+        <!--refresh/update button-->
+        <li><button class="btn btn-info btn-md" id="updateTotalBtnDipsy" onclick="updateTotals()">Refresh Basket</button></li>
+        
+        </ul> <!--end of the list of buttons-->
+        
+
+			</div><!--end of colmd3-->
+
+
+		</div><!--end of colmd12-->
+  </div><!--end of row-->
+<!--end of dipsyBasket-->
+
+    <div id="peggyBasket" style="display: none;">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="col-md-3">
+          <img class="thumbImage" alt="Ragdoll image" src="img/peggymugglewump.jpg" height="120px" width="100%" />
+          </div>
+          <div class="col-md-3">
+          <h4>Peggy Mugglewump</h4>
+          <p>Information about Peggy.....well what can we say.....there's an amazing amount of stuff to talk about, what a fabulous purchase!</p></div>
+          <div class="col-md-3" style="width:auto;">£37.99</div>
+          
+          <div class="col-md-3 quantityBtns" style="width: auto;">
+      
+          <ul>
+          <!--hidden button-->
+          <li><input class="btn btn-primary btn-md" type="submit" id="minusBtnPeggy" value=" - " onclick="removeItemsPeggy();" style="visibility: hidden;"></li>
+
+          <!--visible add button, hides after first click -->
+
+          <!--removed display of add button as there would be a quantity in here-->
+          <li><input class="btn btn-primary btn-md" type="submit" id="addBtnPeggy" value="Add to Cart" style="text-align: center; display:none;"onclick="buyFirstItem();"></li>
+
+          <li><div id="totalInTrolleyPeggy" style="visibility: hidden;"></div></li>
+
+          <li><input class="btn btn-primary btn-md" type="submit" id="plusBtnPeggy" value=" + " onclick="buyMoreItemsPeggy();" style="visibility: hidden;"></li>
+
+          <li><input class="btn btn-danger btn-md" type="submit" id="removeBtnPeggy" value="Remove" onclick="noItemsPeggy();" style="visibility: hidden;"></li>
+
+          <li><button class="btn btn-info btn-md" id="updateTotalBtnPeggy" onclick="updateTotals()">Refresh Basket</button></li>
+          
+
+          </ul>
+        
+
+          </div><!--end of col md 3-->
+      
+     
+        </div><!--end of colmd12-->
+
+    </div><!--end of row-->
+
+		
+	</div><!--end of Peggy basket-->
+
+    
+
+  </div><!--end of container-->
+ 
+
+
+</body>
+
+</html>

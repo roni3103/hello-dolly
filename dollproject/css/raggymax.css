@@ -1,0 +1,345 @@
+/*First handle what happens with different media sizes*/
+
+    @media screen and (max-width: 448px) {
+    /*Remove the top left of the index page and just use half of the right*/
+    .ltop{
+      
+      display: none;
+    }
+    .rtop{
+      height:50%; 
+    }
+
+    /*Video caption displays only on the mobile version as a kind of company logo*/
+    #trackCaption{
+      display: block;
+    }
+
+    /*Shorter intro paragraph for mobile devices*/
+    #fullIntro{
+      display: none;
+    }
+   
+    /*shrink the height of the jumbotron image*/
+    #jtronimg{
+      height:60%;
+      width: 100%;
+      float: left;
+      padding-left: 60px;
+      padding-right: 10px;
+    }
+
+    .jumbotron{
+      padding-bottom: 0px;
+      
+    }
+
+    /*tighten the padding for the buttons*/
+    #totalInTrolleyDipsy, #totalInTrolleyPeggy{
+     
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-right: 4px;
+
+    }
+    
+    /*Don't display the basket image in the mobile version*/
+
+    #dipsyBasket img{
+      display: none;
+    }
+   
+    #peggyBasket img{
+      display: none;
+    }
+
+    #dipsyBasket,#peggyBasket{
+      margin-left: 20px;
+    }
+   
+    /*resize the login box*/
+    .centerdiv{
+      width: 200px;
+    }
+
+    /*Dont display the output (number of items count) or empty basket button on mobile*/
+    #output, #emptyBtn{
+      display: none;
+    } 
+}
+
+/*On larger devices don't show the shorter intro just the long one*/
+@media screen and (min-width: 401px) {
+   #shorterIntro{
+      display: none;
+      
+    }
+}
+
+/*For medium sized media*/
+
+    @media screen and (max-width: 1024px) {
+    /*some stuff to go here when smaller media is used*/
+  
+    #jtronimg{
+      height:100%;
+      width: 100%;
+      float: left;
+      
+      padding-right: 10px;
+    }
+    /*smaller button stuff as per mobile*/
+    #totalInTrolleyDipsy, #totalInTrolleyPeggy{
+      
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-right: 4px;
+      margin-left: 4px;
+    }
+    
+    /*display an image but a smaller one*/
+    #dipsyBasket img, #peggyBasket img{
+      height: 50%;
+      width: 50%;
+    }
+
+   
+   
+   
+}
+
+
+
+/*And now for all the normal CSS*/
+/*A background image to cover the whole site*/
+ body{
+    background-image: url("../img/linen7.jpg");
+    background-size: cover;
+
+  }
+
+/*Remove text decoration from links to stop underlining*/
+
+a:link {
+    text-decoration: none;
+    
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+/*Font settings*/
+
+h1{
+  	font-family: Dancing Script,cursive;
+    text-align: center;
+    font-size: 4em;
+}
+h3{
+  font-family:cursive;
+}
+
+.navbar-brand{
+  font-family: Dancing Script, cursive;
+  font-size: 1.8em;
+}
+.bsktLink{
+  font-family: sans-serif;
+  font-size: 1em;
+  
+}
+
+.jumbotron h1{
+  font-size: 2em;
+}
+
+.jumbotron p{
+  font-size: 1.2em;
+}
+
+video{
+  margin-top: 30px;
+}
+
+
+/*Standardise the height and width of the carousel items*/
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 350px;
+      height: 400px;
+      margin:auto;
+      padding: 10px;
+
+  }
+
+
+/*Change the colour so it's not Bootstrap coloured...*/
+
+.navbar-inverse{
+  background-color: purple;
+
+
+}
+
+/*Some settings for the responsive map*/
+
+.map-responsive{
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+
+}
+
+.map-responsive iframe{
+  left:0;
+  top:0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+#mapJumbo{
+  padding-top: 30px;
+  padding-bottom: 100px;
+}
+
+/*Jumbotron settings applied across site*/
+
+#jtronimg{
+  padding-top:20px;
+  padding-bottom: 20px;
+  margin-left: -20px;
+  float: left;
+  height:100%;
+  width: 100%;
+}
+  
+.jumbotron {
+
+  overflow: hidden;
+  background-color: #cc9966;
+  padding: 20px 10px 30px 10px;
+}
+
+ .justpara{
+    text-align: justify;
+
+  }
+
+
+
+/*On the basket page use a small image*/   
+.thumbImage{
+  height:150px;
+  width: 150px;
+}
+
+/*Settings for the buying buttons*/
+  #totalInTrolleyDipsy, #totalInTrolleyPeggy{
+    border-radius: 25px;
+    background:purple;
+    color: white;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 4px;
+    
+  }
+  .quantityBtns{
+    width: auto;
+  }
+  
+  .quantityBtns li{
+    display: inline-table;
+    
+  }
+ 
+ /*Settings for the basket and checkout panels*/
+  #emptyBasket, #dipsyBasket, #peggyBasket{
+    
+    background-color: #cc9966;
+  }
+  #emptyBasket{
+    height: 200px;
+    text-align: center;
+  }
+
+  .checkoutPanel, #dipsyBasket, #peggyBasket{
+    margin-bottom: 40px;
+  }
+  #dipsyBasket, #peggyBasket{
+    padding-bottom: 20px;
+  }
+  #dipsyBasket, #peggyBasket, .checkoutPanel{
+    padding-top: 20px;
+  }
+
+  #updateTotalBtn{
+    
+    margin-bottom: 20px;
+
+  }
+
+  .checkoutPanel li{
+    text-align: center;
+    display: inline-table;
+    float: right;
+  }
+
+  #totals{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  #continueBtn{
+    float: left;
+  }
+  #output, #totaldiv{
+    background: #cc9966;
+    padding-bottom: 26px;
+  }
+  #addBtnDipsy, #addBtnPeggy{
+    background:purple;
+    
+
+  }
+  .basketBtn{
+    position: absolute;
+    right:60px;
+    bottom: 40px;
+  }
+
+
+/*The central panel on the login page*/
+    .center-div
+{
+  
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  background-color: #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 100px;
+  text-align: center;
+  
+}
+
+/*The panel tab headings on the product page*/
+.panel-default > .panel-heading {
+  background-color: purple;
+  color: white;
+}
+
+
+  
+
+  
