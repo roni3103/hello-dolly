@@ -130,27 +130,9 @@
   <div class="row">
     <div class="col-md-12">
       <div class="myCarousel carousel slide"  ng-controller="SpecialsController as ctrl" id="carousel-dolls">
-        <ol class="carousel-indicators" >
-          <li class="active"  data-slide-to={{product.itemNo}} data-target="#carousel-dolls">
-          </li>
-          <!-- <li data-slide-to="1" data-target="#carousel-179883">
-          </li>
-          <li data-slide-to="2" data-target="#carousel-179883">
-          </li>
-          <li data-slide-to="3" data-target="#carousel-179883">
-          </li>
-          <li data-slide-to="4" data-target="#carousel-179883">
-          </li>
-          <li data-slide-to="5" data-target="#carousel-179883">
-          </li>
-          <li data-slide-to="6" data-target="#carousel-179883">
-          </li>
-           <li data-slide-to="7" data-target="#carousel-179883">
-          </li> -->
-
-        </ol>
+        
         <div class="carousel-inner"  >
-          <div class="item active" ng-repeat="product in products">
+          <div class="item" ng-class="{active:!$index}" ng-repeat="product in products">
             <img alt="{{product.name}} ragdoll" src="img/{{product.image}}" />
             <div class="carousel-caption">
               <h4>
@@ -161,50 +143,9 @@
               </p>
             </div>
           </div>
-          <!-- <div class="item">
-            <img alt="Pippy Green ragdoll" src="img/pippygreen.jpg" />
-            <div class="carousel-caption">
-              <h4>Pippy Green</h4>
-              <p>£53.99</p>
-            </div>
-          </div>
-          <div class="item">
-            <img alt="Ragdoll" src="img/pippylongstockings.jpg" />
-            <div class="carousel-caption">
-              <h4>Pippy Longstockings</h4>
-              <p>£47.99</p>
-            </div>
-          </div>
-          <div class="item">
-            <img alt="Ragdoll" src="img/sallyragz.jpg" />
-            <div class="carousel-caption">
-              <h4>Sally Ragz</h4>
-              <p>£36.99</p>
-            </div>
-          </div>
-          <div class="item">
-            <img alt="Ragdoll" src="img/peggymugglewump.jpg" />
-            <div class="carousel-caption">
-              <h4>Peggy Mugglewump</h4>
-              <p>£37.99</p>
-            </div>
-          </div>
-           <div class="item">
-            <img alt="Ragdoll" src="img/pippyspiggles.jpg" />
-            <div class="carousel-caption">
-              <h4>Pippy Spiggles</h4>
-              <p>£43.99</p>
-            </div>
-          </div>
-
-           <div class="item">
-            <img alt="Ragdoll" src="img/fairynuff.jpg" />
-            <div class="carousel-caption">
-              <h4>Fairy Nuff</h4>
-              <p>£38.99</p>
-            </div>
-          </div> -->
-        </div> <a class="left carousel-control" href="#carousel-179883" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-179883" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+          
+        </div> <a class="left carousel-control" href="#carousel-dolls" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> 
+		<a class="right carousel-control" href="#carousel-dolls" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
         </div>
     </div>
   </div>
