@@ -4,7 +4,7 @@
   <head>
     <title>RaggyMax Dolls</title>
     <meta charset="utf-8">
-  
+
     <!--set the viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,20 +16,20 @@
 
     <!--now bootstrap-->
     <script src="plugins/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
-    
+
     <!--cookies-->
     <script src="plugins/js-cookie-master/src/js.cookie.js"></script>
 
     <!--my script file-->
     <script src="js/raggymax.js"></script>
-   
+
 
     <!--Google fonts-->
     <link href='https://fonts.googleapis.com/css?family=Dancing+Script:700' rel='stylesheet' type='text/css'>
 
     <!--link to our style sheet-->
     <link rel="stylesheet" href="css/raggymax.css" type="text/css">
-   
+
 
   </head><!--end of the head-->
 
@@ -52,9 +52,9 @@
       <div class="col-md-12">
       <img class="rtop" alt="Ragdoll image" src="img/dollface.jpg" height="90px" width="100%" />
       </div><!--end of col 1-->
-    
 
-      
+
+
 
     </div><!--end of row 1-->
 <!--second row full 12 width for our navbar-->
@@ -70,29 +70,29 @@
           </button>
 
           <!--Brand marker in top left-->
-          <a class="navbar-brand" href="products.html">Home</a>
+          <a class="navbar-brand" href="shop">Home</a>
           <!--navbar extra-->
-          <a class="navbar-brand bsktLink navbar-right" href="myBasket.html"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-          
-          
+          <a class="navbar-brand bsktLink navbar-right" href="checkout"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+
+
       </div>
-        
+
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            
-            <li><a href="specials.html">Our Special Order Dolls</a></li>
-            <li><a href="map.html">Where to find us</a></li>
-            
+
+            <li><a href="specialorders">Our Special Order Dolls</a></li>
+            <li><a href="map">Where to find us</a></li>
+
 
           </ul><!--end of left nav bar-->
 
-          
+
 
           <!--search bar - would like to get this actually working?-->
           <form class="navbar-form navbar-right" role="search">
             <div class="form-group">
               <input type="text" class="form-control" />
-            </div> 
+            </div>
             <button type="submit" class="btn btn-default" onclick="searchBtnAction()">
               Search
             </button>
@@ -100,18 +100,18 @@
 
           <!--STUFF TO THE RIGHT OF THE NAVBAR-->
           <ul class="nav navbar-nav navbar-right">
-  
+
             <li class="dropdown">
                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Log In or Register<strong class="caret"></strong></a>
               <ul class="dropdown-menu">
-                <li><a href="login.html">Log In</a></li>
-                <li><a href="register.html">Register</a></li>
+                <li><a href="login">Log In</a></li>
+                <li><a href="register">Register</a></li>
               </ul>
             </li>
 
           </ul><!--end of right nav-->
       </div>
-        
+
       </nav>
     </div><!--end of column-->
   </div><!--end of row 2-->
@@ -124,12 +124,12 @@
 <div class="row">
   <div class="col-md-12">
 
-    
+
      <div class="checkoutPanel">
-     <a href="products.html"><button id="continueBtn" class="btn btn-info btn-md">Continue Shopping</button></a>
+     <a href="shop"><button id="continueBtn" class="btn btn-info btn-md">Continue Shopping</button></a>
       <ul>
       <li><a href="#"><button class="btn btn-primary btn-md" onclick="checkout()">Check Out</button></a></li>
-      
+
       <div id="totals">
       <li><div id="output"></div></li>
       <li><div id="totaldiv"></div></li>
@@ -169,7 +169,7 @@
       <p>Information about Dipsy.....this could go on for a while as she's awesome.....there's an amazing amount of stuff to talk about.</p></div>
 			<div class="col-md-3" style="width:auto;">£39.99</div>
 			<div class="col-md-3 quantityBtns" style="width: auto;">
-			
+
         <ul>
         <!--hidden minus button-->
         <li><input class="btn btn-primary btn-md" type="submit" id="minusBtnDipsy" value=" - " onclick="removeItemsDipsy();" style="visibility: hidden;"></li>
@@ -188,9 +188,9 @@
 
         <!--refresh/update button-->
         <li><button class="btn btn-info btn-md" id="updateTotalBtnDipsy" onclick="updateTotals()">Refresh Basket</button></li>
-        
+
         </ul> <!--end of the list of buttons-->
-        
+
 
 			</div><!--end of colmd3-->
 
@@ -209,9 +209,9 @@
           <h4>Peggy Mugglewump</h4>
           <p>Information about Peggy.....well what can we say.....there's an amazing amount of stuff to talk about, what a fabulous purchase!</p></div>
           <div class="col-md-3" style="width:auto;">£37.99</div>
-          
+
           <div class="col-md-3 quantityBtns" style="width: auto;">
-      
+
           <ul>
           <!--hidden button-->
           <li><input class="btn btn-primary btn-md" type="submit" id="minusBtnPeggy" value=" - " onclick="removeItemsPeggy();" style="visibility: hidden;"></li>
@@ -228,25 +228,25 @@
           <li><input class="btn btn-danger btn-md" type="submit" id="removeBtnPeggy" value="Remove" onclick="noItemsPeggy();" style="visibility: hidden;"></li>
 
           <li><button class="btn btn-info btn-md" id="updateTotalBtnPeggy" onclick="updateTotals()">Refresh Basket</button></li>
-          
+
 
           </ul>
-        
+
 
           </div><!--end of col md 3-->
-      
-     
+
+
         </div><!--end of colmd12-->
 
     </div><!--end of row-->
 
-		
+
 	</div><!--end of Peggy basket-->
 
-    
+
 
   </div><!--end of container-->
- 
+
 
 
 </body>
