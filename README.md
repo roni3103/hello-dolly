@@ -7,7 +7,7 @@ I'm just getting my head around git and this is a good way to practice using it,
 
 Work so far:
 
-Removing links and replacing with simple Express routing via the routes in the main.js file -- completed for the products page, still to be completed for the others.
+Removing links and replacing with simple Express routing via the routes in the main.js file -- completed for all pages.
 
 Planned work:
 
