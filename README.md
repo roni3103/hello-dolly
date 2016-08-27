@@ -12,7 +12,9 @@ Removing links and replacing with simple Express routing via the routes in the m
 Planned work:
 
 -- To include Angular with ng-repeat for 'stock' items.
+
 -- To include a simple database for user login.
+
 -- To connect up registration form to database
 
 
