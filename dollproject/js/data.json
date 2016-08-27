@@ -1,0 +1,15 @@
+[
+    {
+        "itemNo":1,
+        "image":"dipsydoodle.jpg",
+        "name":"Dipsy Doodle",
+        "price":39.99
+    },
+    {
+        "itemNo":2,
+        "image":"peggymugglewump.jpg",
+        "name":"Peggy Mugglewump",
+        "price":37.99
+    }
+
+]
