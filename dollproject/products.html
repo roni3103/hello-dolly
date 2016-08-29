@@ -1,5 +1,5 @@
   <!DOCTYPE html>
-  <html>
+  <html ng-app="myApp">
 
   <head>
     <title>RaggyMax Dolls</title>
@@ -20,9 +20,17 @@
     <!--cookies-->
     <script src="plugins/js-cookie-master/src/js.cookie.js"></script>
 
-    <!--my script file-->
-    <script src="js/raggymax.js"></script>
+ 
+    
+    <!--my angular controllers-->
+    <!--angular-->
+    <script src="plugins/angular.min.js"></script>
+    <!-- <script src="plugins/angular-route.min.js"></script> -->
+    <script src="js/angapps.js"></script>
+    <script src="js/stockctrl.js"></script>
    
+      <!--my script file-->
+    <script src="js/raggymax.js"></script>
    
 
     <!--Google fonts-->
@@ -115,7 +123,7 @@
   </div><!--end of row 2-->
 
     <!--Testing out a bit of jquery/ajax here-->
-  <div class="row">
+  <!--<div class="row">
   <div class="col-md-12" id="deal">
     <div class="jumbotron" style="margin-left: 25px;margin-right: 25px; margin-top: 10px; text-align: center; opacity: 0.6;">
       <div class="col-md-12">
@@ -125,128 +133,40 @@
     
 
   </div>
-  </div>
+  </div>-->
 
-<div class="row">
-    <div class="col-md-12">
-      <div class="tabbable" id="tabs-421478">
-        <ul class="nav nav-tabs">
-          <li class="active panel-default">
-            <a class="panel-heading" href="#panel-837341" data-toggle="tab">Dipsy Doodle</a>
-          </li>
-          <li class="panel-default">
-            <a class="panel-heading" href="#panel-894336" data-toggle="tab">Peggy Mugglewump</a>
-          </li>
-        </ul>
-        <div class="tab-content">
-          <div class="tab-pane active" id="panel-837341">
-           <div class="col-md-12">
-              <div class="jumbotron">
-                <div class="col-md-4">
-                <img id="jtronimg" alt="Dipsy Doodle Ragdoll image" src="img/dipsydoodle.jpg"  />
-                </div>
-                <div class="col-md-8">
-                
-                <h2>
-                  Dipsy Doodle
-                </h2>
-                <p class="justpara">
-                  Dipsy Doodle is Suspendisse eget ligula ac est dignissim dapibus. In sed pellentesque diam. Pellentesque sed est id enim scelerisque finibus. Phasellus in ornare nisi. Aliquam a velit sit amet augue imperdiet congue in ac tortor. Quisque suscipit aliquet congue. Nunc eleifend sapien nisl, nec pulvinar risus dignissim et. Nam interdum et mi ut eleifend. Duis est magna, egestas id orci quis, imperdiet bibendum mi. Sed eros libero, maximus quis nulla eget, condimentum fermentum nisi. Proin cursus at turpis sed facilisis. Nulla facilisi.
-
-                          </p>
-                  <br><br>
-                  
-
-        
-                  <div class="quantityBtns">
-                  <ul>
-                  <!--hidden button-->
-                  <li><input class="btn btn-primary btn-md"type="submit" id="minusBtnDipsy" value=" - " onclick="removeItemsDipsy();" style="visibility: hidden;"></li>
-
-                  <!--visible add button, hides after first click -->
-                  
-                  <li><input type="submit" id="addBtnDipsy" class="btn btn-info btn-md" value="Add Dipsy to your Basket" onclick="buyFirstItemDipsy();"></li>
-                  
-
-                  <li><div id="totalInTrolleyDipsy" style="visibility: hidden;"></div></li>
-
-                  <li><input class="btn btn-primary btn-md" type="submit" id="plusBtnDipsy" value=" + " onclick="buyMoreItemsDipsy();" style="visibility: hidden;"></li>
-
-                  <li><input class="btn btn-danger btn-md" type="submit" id="removeBtnDipsy" value="Remove" onclick="noItemsDipsy();" style="visibility: hidden;"></li>
+	<div class="row">
+        <div class="col-md-12" ng-controller="SpecialsController as store">
+          <div class="row" ng-repeat="doll in products">
+			<div class="col-md-2"></div>
+            <div class="col-md-8" >
+              <div class="thumbnail">
+    						<img class="img-rounded maindoll" ng-src="img/{{doll.image}}" alt="'{{doll.name}}'" ng-hide="{{doll.image==null}}" />
 
 
-                  </ul>
-                  <br><br>
+    						<div class="caption">
+    							<h3>
+    								{{doll.name}}
 
-                
-
-                  </div><!--end buttons -->
-
-         
-        </div><!--end of second inner columns-->
-        <!--button at the bottom below the columns-->
-          <a href="myBasket.html" class="btn btn-info btn-md basketBtn">
-          <span class="glyphicon glyphicon-shopping-cart"></span>&nbsp View Basket
-        </a>
-      </div><!--end jumbotron-->
-    </div><!--end colmd12-->
-</div><!--end tab-pane-->
-          <div class="tab-pane" id="panel-894336">
-          <div class="col-md-12">
-              <div class="jumbotron">
-                <div class="col-md-4">
-                <img id="jtronimg" alt="Peggy Mugglewump Ragdoll image" src="img/peggymugglewump.jpg"  />
-                </div>
-                <div class="col-md-8">
-                
-                <h2>
-                 Peggy Mugglewump
-                </h2>
-                <p class="justpara">
-                  Peggy Mugglewump is Suspendisse eget ligula ac est dignissim dapibus. In sed pellentesque diam. Pellentesque sed est id enim scelerisque finibus. Phasellus in ornare nisi. Aliquam a velit sit amet augue imperdiet congue in ac tortor. Quisque suscipit aliquet congue. Nunc eleifend sapien nisl, nec pulvinar risus dignissim et. Nam interdum et mi ut eleifend. Duis est magna, egestas id orci quis, imperdiet bibendum mi. Sed eros libero, maximus quis nulla eget, condimentum fermentum nisi. Proin cursus at turpis sed facilisis. Nulla facilisi.
-
-                          </p>
-                  <br><br>
-                  
-
-        
-                  <div class="quantityBtns">
-                  <ul>
-                  <!--hidden button-->
-                  <li><input class="btn btn-primary btn-md" type="submit" id="minusBtnPeggy" value=" - " onclick="removeItemsPeggy();" style="visibility: hidden;"></li>
-
-                  <!--visible add button, hides after first click -->
-                  
-                  <li><input type="submit" id="addBtnPeggy" class="btn btn-info btn-md" value="Add Peggy to your Basket" onclick="buyFirstItemPeggy();"></li>
-                  
-
-                  <li><div id="totalInTrolleyPeggy" style="visibility: hidden;"></div></li>
-
-                  <li><input class="btn btn-primary btn-md" type="submit" id="plusBtnPeggy" value=" + " onclick="buyMoreItemsPeggy();" style="visibility: hidden;"></li>
-
-                  <li><input class="btn btn-danger btn-md" type="submit" id="removeBtnPeggy" value="Remove" onclick="noItemsPeggy();" style="visibility: hidden;"></li>
-
-
-                  </ul>
-                  <br><br>
-
-                
-
-                  </div>
-
-         
-                </div><!--end of second inner columns-->
-                <a href="myBasket.html" class="btn btn-info btn-md basketBtn">
-                <span class="glyphicon glyphicon-shopping-cart"></span>&nbsp View Basket
-                </a>  
-                </div><!--end ?-->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><!--end tabbable-->
-    </div><!--end colmd12-->
-  </div><!--end row-->
+    							</h3>
+    							
+    							<p>
+    								Details: {{doll.name}} is blah 
+    							</p>
+    							<p>Price: £{{doll.price}}</p>
+    							<p>
+    								<a class="btn btn-primary" ng-click="buyStuff($index)">Add to Basket</a>
+                    <b id="totalDiv" ng-if="book.total>0">{{book.total}} in basket</b>
+                    <button class="btn btn-danger btn-md" ng-if="book.total>0" ng-click="removeStuff($index)">-</button>
+                    <!--<a class="btn" href="page2.html">More Details</a>-->
+    							</p>
+    						</div><!--end caption-->
+    					</div><!--end thumbnail-->
+            </div><!--end colmd8-->
+            <div class="col-md-2"></div>
+          </div><!--end row-->
+        </div><!--end colmd12-->
+      </div><!--end row-->
 
 
 

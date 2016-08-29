@@ -177,7 +177,7 @@ video{
 /*Change the colour so it's not Bootstrap coloured...*/
 
 .navbar-inverse{
-  background-color: purple;
+  background: purple;
 
 
 }
@@ -339,6 +339,14 @@ video{
   color: white;
 }
 
+.maindoll{
+	height: 350px;
+	width: 175px;
+
+}
+.col-md-2{
+
+}
 
   
 

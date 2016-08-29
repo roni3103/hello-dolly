@@ -10,6 +10,41 @@
         "image":"peggymugglewump.jpg",
         "name":"Peggy Mugglewump",
         "price":37.99
+    },
+    {
+        "itemNo":3,
+        "image":"pippygreen.jpg",
+        "name":"Pippy Green",
+        "price":28.99
+    },
+    {
+        "itemNo":4,
+        "image":"fairynuff.jpg",
+        "name":"Fairy Nuff",
+        "price":42.99
+    },
+    {
+        "itemNo":5,
+        "image":"pippylongstockings.jpg",
+        "name":"Pippy Longstockings",
+        "price":31.99
+    },
+    {
+        "itemNo":6,
+        "image":"pippyspiggles.jpg",
+        "name":"Pippy Spiggles",
+        "price":36.99
+    },
+    {
+        "itemNo":7,
+        "image":"ragdollyanna.jpg",
+        "name":"Ragdolly Anna",
+        "price":34.99
+    },
+    {
+        "itemNo":8,
+        "image":"sallyragz.jpg",
+        "name":"Sally Ragz",
+        "price":32.99
     }
-
 ]
