@@ -19,11 +19,11 @@ myApp.controller('SpecialsController', ['$scope', '$http', function($scope, $htt
 
         for(i=0;i<$scope.products.length;i++)
         {
-          console.log(Cookies.get($scope.products[i].name));
+          
 
           if(Cookies.get($scope.products[i].name)===0||Cookies.get($scope.products[i].name)===undefined)
           {
-          console.log("nothing to show");
+          //console.log("nothing to show");
 
           }
           else {
@@ -42,9 +42,9 @@ myApp.controller('SpecialsController', ['$scope', '$http', function($scope, $htt
           //
           //
           //
-          // $scope.overall=$scope.overall.toFixed(2);
-          //
-          // console.log("Total purchases so far: " + $scope.overall);
+          $scope.overall=$scope.overall.toFixed(2);
+
+          console.log("Total purchases so far: " + $scope.overall);
         });
 
 
