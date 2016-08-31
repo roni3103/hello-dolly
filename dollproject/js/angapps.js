@@ -1,8 +1,4 @@
 var myApp = angular.module('myApp', [
-    //'ngRoute',
-    //'shopControllers'
-    //
-
 ]);
 
 myApp.controller('SpecialsController', ['$scope', '$http', function($scope, $http) {
@@ -14,17 +10,12 @@ myApp.controller('SpecialsController', ['$scope', '$http', function($scope, $htt
         //set totals for purchases and overall
         $scope.purchases=0;
         $scope.overall=0;
-        //
-        //
 
-        for(i=0;i<$scope.products.length;i++)
-        {
-          
 
-          if(Cookies.get($scope.products[i].name)===0||Cookies.get($scope.products[i].name)===undefined)
-          {
-          //console.log("nothing to show");
+        for(i=0;i<$scope.products.length;i++){
 
+          if(Cookies.get($scope.products[i].name)===0||Cookies.get($scope.products[i].name)===undefined){
+          console.log("nothing to show");
           }
           else {
             //increment the purchases variable
@@ -35,36 +26,25 @@ myApp.controller('SpecialsController', ['$scope', '$http', function($scope, $htt
             $scope.products[i].subtotal=$scope.parsedTotal*$scope.products[i].price;
             $scope.products[i].subtotal=$scope.products[i].subtotal.toFixed(2);
             $scope.overall=$scope.overall+(Cookies.get($scope.products[i].name)*$scope.products[i].price);
-
           }
-
         }
-          //
-          //
-          //
+
           $scope.overall=$scope.overall.toFixed(2);
 
           console.log("Total purchases so far: " + $scope.overall);
         });
 
-
-
-
-
-
-      //Method to purchase instantly one item
+      //Method to purchase items
       $scope.buyStuff=function($index){
-
         //get it to add one every time its clicked
         $scope.products[$index].total++;
         Cookies.set($scope.products[$index].name,$scope.products[$index].total);
 
         //confirmation message for testing
         console.log($scope.products[$index].name + " " + $scope.products[$index].total);
-
-
       };
 
+      //Method to remove items one by one
       $scope.removeStuff=function(index){
         //get it to add one every time its clicked
         $scope.products[index].total--;
@@ -74,8 +54,11 @@ myApp.controller('SpecialsController', ['$scope', '$http', function($scope, $htt
         console.log($scope.products[index].name + " " + $scope.products[index].total);
       };
 
-    //});
-
+      //method to remove all items
+      $scope.removeAll=function(index){
+        Cookies.remove($scope.products[index].name);
+        location.reload();
+      };
 
 }]);
 // myApp.config(['$routeProvider', function($routeProvider) {

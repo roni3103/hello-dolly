@@ -27,7 +27,7 @@
     <script src="plugins/angular.min.js"></script>
     <!-- <script src="plugins/angular-route.min.js"></script> -->
     <script src="js/angapps.js"></script>
-    <script src="js/stockctrl.js"></script>
+    <!-- <script src="js/stockctrl.js"></script> -->
 
       <!--my script file-->
     <script src="js/raggymax.js"></script>
@@ -156,8 +156,8 @@
     							<p>Price: £{{doll.price}}</p>
     							<p>
     								<a class="btn btn-primary" ng-click="buyStuff($index)">Add to Basket</a>
-                    <b id="totalDiv" ng-if="products.total>0">{{products.total}} in basket</b>
-                    <button class="btn btn-danger btn-md" ng-if="products.total>0" ng-click="removeStuff($index)">-</button>
+                    <b id="totalDiv" ng-if="doll.total>0">{{doll.total}} in basket</b>
+                    <button class="btn btn-danger btn-md" ng-if="doll.total>0" ng-click="removeStuff($index)">-</button>
                     <!--<a class="btn" href="page2.html">More Details</a>-->
     							</p>
     						</div><!--end caption-->

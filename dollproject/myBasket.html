@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 
   <head>
     <title>RaggyMax Dolls</title>
@@ -20,6 +20,13 @@
     <!--cookies-->
     <script src="plugins/js-cookie-master/src/js.cookie.js"></script>
 
+    <!--my angular controllers-->
+    <!--angular-->
+    <script src="plugins/angular.min.js"></script>
+    <!-- <script src="plugins/angular-route.min.js"></script> -->
+    <script src="js/angapps.js"></script>
+    <!-- <script src="js/stockctrl.js"></script> -->
+
     <!--my script file-->
     <script src="js/raggymax.js"></script>
 
@@ -34,7 +41,7 @@
   </head><!--end of the head-->
 
 <!--call the view cart method on loading the body-->
-<body onload="callOnLoad()">
+<body ng-controller="SpecialsController">
 
 
 
@@ -45,18 +52,11 @@
     <!-- first row with 2 columns 4 and 8 slots wide-->
     <div class="row">
 
-      <!--<div class="col-md-4 ltop">
-        <h1 class="ltop"><a href="#"></a>RaggyMax Dolls</h1>
-      </div>-->
-
       <div class="col-md-12">
       <img class="rtop" alt="Ragdoll image" src="img/dollface.jpg" height="90px" width="100%" />
       </div><!--end of col 1-->
-
-
-
-
     </div><!--end of row 1-->
+
 <!--second row full 12 width for our navbar-->
   <div class="row">
 
@@ -79,11 +79,8 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-
             <li><a href="specialorders">Our Special Order Dolls</a></li>
             <li><a href="map">Where to find us</a></li>
-
-
           </ul><!--end of left nav bar-->
 
 
@@ -120,128 +117,69 @@
 <!--Link back to the main shop page-->
 
 
-<!--an extra row for checkout panel instead of a panel to the side-->
+<!-- an extra row for checkout panel instead of a panel to the side-->
+<!--Empty Basket-->
+<div class="row">
+  <div class="col-md-12">
+    <div id="emptyBasket" ng-if="purchases===0">
+      <div class="jumbotron">
+        <h3>Your basket is empty</h3>
+      </div>
+    </div>
+  </div><!--end colmd12-->
+</div><!--end row-->
+
+<!--Basket with products in-->
 <div class="row">
   <div class="col-md-12">
 
+<div id="carts" ng-if="purchases>0">
+	<table ng-repeat="product in products" id="cart" class="table table-hover table-condensed"  ng-if="product.total>0" >
+    				<thead>
+						<tr>
+							<th style="width:35%">Product</th>
+							<th style="width:25%">Price</th>
+							<th style="width:8%">Quantity</th>
+							<th style="width:22%" class="text-center">Subtotal</th>
+							<th style="width:10%"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-th="Product">
+								<div class="row">
+									<div class="col-sm-3 hidden-xs"><img ng-src="img/{{product.image}}" alt="..." class="img-responsive"/></div>
+									<div class="col-sm-9">
+										<h4 class="nomargin">{{product.name}}</h4>
+                    information
+									</div>
+								</div>
+							</td>
+							<td data-th="Price">{{product.price}}</td>
+							<td data-th="Quantity">
+								<p class="form-control text-center">{{product.total}}</p>
+							</td>
+							<td data-th="Subtotal" class="text-center">£{{product.subtotal}}</td>
+							<td class="actions" data-th="">
+								<button class="btn btn-danger btn-md" ng-click="removeAll($index)"><i class="fa fa-trash-o"> Remove</i></button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 
-     <div class="checkoutPanel">
-     <a href="shop"><button id="continueBtn" class="btn btn-info btn-md">Continue Shopping</button></a>
-      <ul>
-      <li><a href="#"><button class="btn btn-primary btn-md" onclick="checkout()">Check Out</button></a></li>
-
-      <div id="totals">
-      <li><div id="output"></div></li>
-      <li><div id="totaldiv"></div></li>
-      </div>
-      <!--clear button-->
-      <li><button class="btn btn-info btn-md" id="emptyBtn" onclick="clearAndCheck()">Empty Basket</button></li>
-      </ul>
-
-      </div>
-  </div>
-</div>
-
-
-<!--Display div for the empty basket - see js file for methods -->
-<div id="emptyBasket" style="display: none;">
-  <div class="row">
-    <div class="col-md-12">
-      <h4>Your basket is currently empty</h4>
-      <p>Give it a job to do, go have a look at some of our fabulous dolls....</p>
-    </div><!--end colmd12-->
-  </div><!--end row-->
-</div><!--end emptyBasket div-->
-
-
-<!--Display div for first product Dipsy-->
-<div id="dipsyBasket" style="display: none;">
-	<div class="row">
-		<div class="col-md-12">
-
-
-			<div class="col-md-3">
-			   <img class="thumbImage" alt="Ragdoll image" src="img/dipsydoodle.jpg" height="120px" width="100%" />
-			</div>
-
-			<div class="col-md-3">
-      <h4>Dipsy Doodle</h4>
-      <p>Information about Dipsy.....this could go on for a while as she's awesome.....there's an amazing amount of stuff to talk about.</p></div>
-			<div class="col-md-3" style="width:auto;">£39.99</div>
-			<div class="col-md-3 quantityBtns" style="width: auto;">
-
-        <ul>
-        <!--hidden minus button-->
-        <li><input class="btn btn-primary btn-md" type="submit" id="minusBtnDipsy" value=" - " onclick="removeItemsDipsy();" style="visibility: hidden;"></li>
-
-        <!--hidden add on this page button, hides after first click -->
-        <li><input class="btn btn-primary btn-md" type="submit" id="addBtnDipsy" value="Add to Cart" style="text-align: center; display: none;"onclick="buyFirstItemDipsy();"></li>
-
-        <!--hidden amount fed from the cookie-->
-        <li><div id="totalInTrolleyDipsy" style="visibility: hidden;"></div></li>
-
-        <!--hidden plus button-->
-        <li><input class="btn btn-primary btn-md" type="submit" id="plusBtnDipsy" value=" + " onclick="buyMoreItemsDipsy();" style="visibility: hidden;"></li>
-
-        <!--remove button-->
-        <li><input class="btn btn-danger btn-md" type="submit" id="removeBtnDipsy" value="Remove" onclick="noItemsDipsy();" style="visibility: hidden;"></li>
-
-        <!--refresh/update button-->
-        <li><button class="btn btn-info btn-md" id="updateTotalBtnDipsy" onclick="updateTotals()">Refresh Basket</button></li>
-
-        </ul> <!--end of the list of buttons-->
+        <table style="width:100%;">
+            <tr>
+              <td><a href="index.html" class="btn btn-warning">Continue Shopping</a></td>
+              <td colspan="2" class="hidden-xs"></td>
+              <td class="hidden-xs text-center"><strong style="font-size:2em;">Total: £{{overall}}</strong></td>
+              <td><a href="#" class="btn btn-success btn-block">Checkout</a></td>
+            </tr>
+        </table>
 
 
-			</div><!--end of colmd3-->
-
-
-		</div><!--end of colmd12-->
-  </div><!--end of row-->
-<!--end of dipsyBasket-->
-
-    <div id="peggyBasket" style="display: none;">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="col-md-3">
-          <img class="thumbImage" alt="Ragdoll image" src="img/peggymugglewump.jpg" height="120px" width="100%" />
-          </div>
-          <div class="col-md-3">
-          <h4>Peggy Mugglewump</h4>
-          <p>Information about Peggy.....well what can we say.....there's an amazing amount of stuff to talk about, what a fabulous purchase!</p></div>
-          <div class="col-md-3" style="width:auto;">£37.99</div>
-
-          <div class="col-md-3 quantityBtns" style="width: auto;">
-
-          <ul>
-          <!--hidden button-->
-          <li><input class="btn btn-primary btn-md" type="submit" id="minusBtnPeggy" value=" - " onclick="removeItemsPeggy();" style="visibility: hidden;"></li>
-
-          <!--visible add button, hides after first click -->
-
-          <!--removed display of add button as there would be a quantity in here-->
-          <li><input class="btn btn-primary btn-md" type="submit" id="addBtnPeggy" value="Add to Cart" style="text-align: center; display:none;"onclick="buyFirstItem();"></li>
-
-          <li><div id="totalInTrolleyPeggy" style="visibility: hidden;"></div></li>
-
-          <li><input class="btn btn-primary btn-md" type="submit" id="plusBtnPeggy" value=" + " onclick="buyMoreItemsPeggy();" style="visibility: hidden;"></li>
-
-          <li><input class="btn btn-danger btn-md" type="submit" id="removeBtnPeggy" value="Remove" onclick="noItemsPeggy();" style="visibility: hidden;"></li>
-
-          <li><button class="btn btn-info btn-md" id="updateTotalBtnPeggy" onclick="updateTotals()">Refresh Basket</button></li>
-
-
-          </ul>
-
-
-          </div><!--end of col md 3-->
-
-
-        </div><!--end of colmd12-->
-
-    </div><!--end of row-->
-
-
-	</div><!--end of Peggy basket-->
+		</div><!--end cart
+	</div><!--end colmd12-->
+</div><!--end row-->
 
 
 
