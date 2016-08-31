@@ -9,11 +9,13 @@ Work so far:
 
 Removing links and replacing with simple Express routing via the routes in the main.js file -- completed for all pages.
 
-Included Angular with ng-repeat for 'stock' items -- to set up separate controllers
+Included Angular with ng-repeat for 'stock' items -- to set up separate controllers where required
+
+Code reworked for purchase based on the bookshop code in hello-world repo
 
 Planned work:
 
--- To rework the purchase code entirely, based on the 'Bookshop' code in hello-world repo
+-- To use partial pages which load using Angular routing rather than separate pages
 
 -- To include a simple database for user login.
 
