@@ -4,7 +4,7 @@
   <head>
     <title>RaggyMax Dolls</title>
     <meta charset="utf-8">
-  
+
     <!--set the viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,40 +16,40 @@
 
     <!--now bootstrap-->
     <script src="plugins/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
-    
+
     <!--cookies-->
     <script src="plugins/js-cookie-master/src/js.cookie.js"></script>
 
- 
-    
+
+
     <!--my angular controllers-->
     <!--angular-->
     <script src="plugins/angular.min.js"></script>
     <!-- <script src="plugins/angular-route.min.js"></script> -->
     <script src="js/angapps.js"></script>
     <script src="js/stockctrl.js"></script>
-   
+
       <!--my script file-->
     <script src="js/raggymax.js"></script>
-   
+
 
     <!--Google fonts-->
     <link href='https://fonts.googleapis.com/css?family=Dancing+Script:700' rel='stylesheet' type='text/css'>
 
     <!--link to our style sheet-->
     <link rel="stylesheet" href="css/raggymax.css" type="text/css">
-    
+
     <script type="text/javascript">
 
     </script>
 
 
-   
+
 
   </head>
 
   <body onload="checkCookieOnProducts()">
-  
+
 
   <div class="container-fluid">
     <!--first row-->
@@ -76,25 +76,25 @@
           <p class="navbar-brand">RaggyMax Dolls</p>
           <!--navbar extra-->
           <a class="navbar-brand bsktLink navbar-right" href="checkout"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-        
+
       </div>
-        
+
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            
+
             <li><a href="specialorders">Our Special Order Dolls</a></li>
             <li><a href="map">Where to find us</a></li>
-            
+
 
           </ul><!--end of left nav bar-->
 
-          
+
 
           <!--search bar - would like to get this working?-->
           <form class="navbar-form navbar-right" role="search">
             <div class="form-group">
               <input type="text" class="form-control" />
-            </div> 
+            </div>
             <button type="submit" class="btn btn-default" onclick="searchBtnAction()">
               Search
             </button>
@@ -102,7 +102,7 @@
 
           <!--STUFF TO THE RIGHT OF THE NAVBAR-->
           <ul class="nav navbar-nav navbar-right">
-  
+
             <li class="dropdown">
                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Log In or Register<strong class="caret"></strong></a>
               <ul class="dropdown-menu">
@@ -115,9 +115,9 @@
 
           </ul><!--end of right nav-->
 
-          
+
       </div>
-        
+
       </nav>
     </div><!--end of column-->
   </div><!--end of row 2-->
@@ -130,7 +130,7 @@
       <button id="driver" class="btn btn-primary btn-md">Click here for today's special offers</button>
       </div>
     </div>
-    
+
 
   </div>
   </div>-->
@@ -149,15 +149,15 @@
     								{{doll.name}}
 
     							</h3>
-    							
+
     							<p>
-    								Details: {{doll.name}} is blah 
+    								Details: {{doll.name}} is blah
     							</p>
     							<p>Price: £{{doll.price}}</p>
     							<p>
     								<a class="btn btn-primary" ng-click="buyStuff($index)">Add to Basket</a>
-                    <b id="totalDiv" ng-if="book.total>0">{{book.total}} in basket</b>
-                    <button class="btn btn-danger btn-md" ng-if="book.total>0" ng-click="removeStuff($index)">-</button>
+                    <b id="totalDiv" ng-if="products.total>0">{{products.total}} in basket</b>
+                    <button class="btn btn-danger btn-md" ng-if="products.total>0" ng-click="removeStuff($index)">-</button>
                     <!--<a class="btn" href="page2.html">More Details</a>-->
     							</p>
     						</div><!--end caption-->
@@ -171,7 +171,7 @@
 
 
 
-  
+
   </div><!--end of container-->
 
 

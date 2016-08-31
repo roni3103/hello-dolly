@@ -3,48 +3,64 @@
         "itemNo":1,
         "image":"dipsydoodle.jpg",
         "name":"Dipsy Doodle",
+        "total":0,
+        "subtotal":0,
         "price":39.99
     },
     {
         "itemNo":2,
         "image":"peggymugglewump.jpg",
         "name":"Peggy Mugglewump",
+        "total":0,
+        "subtotal":0,
         "price":37.99
     },
     {
         "itemNo":3,
         "image":"pippygreen.jpg",
         "name":"Pippy Green",
+        "total":0,
+        "subtotal":0,
         "price":28.99
     },
     {
         "itemNo":4,
         "image":"fairynuff.jpg",
         "name":"Fairy Nuff",
+        "total":0,
+        "subtotal":0,
         "price":42.99
     },
     {
         "itemNo":5,
         "image":"pippylongstockings.jpg",
         "name":"Pippy Longstockings",
+        "total":0,
+        "subtotal":0,
         "price":31.99
     },
     {
         "itemNo":6,
         "image":"pippyspiggles.jpg",
         "name":"Pippy Spiggles",
+        "total":0,
+        "subtotal":0,
         "price":36.99
     },
     {
         "itemNo":7,
         "image":"ragdollyanna.jpg",
         "name":"Ragdolly Anna",
+        "total":0,
+        "subtotal":0,
         "price":34.99
     },
     {
         "itemNo":8,
         "image":"sallyragz.jpg",
         "name":"Sally Ragz",
+        "total":0,
+        "subtotal":0,
         "price":32.99
     }
 ]
